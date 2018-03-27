@@ -31,7 +31,7 @@ for idx = 1:length(Filenames)
     actualSpeaker = T.Label{1};
     predictedSpeaker = char(predictedLabel);
     
-    if strcmp(actualSpeaker,predictedSpeaker)
+    if strcmp(actualSpeaker, predictedSpeaker)
         correct = correct + 1;
     end
     total = total + 1;
