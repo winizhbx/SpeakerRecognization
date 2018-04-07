@@ -3,7 +3,7 @@ lenData = length(datastore.Files);
 features = cell(lenData,1);
 for i = 1:lenData
     [data, info] = read(datastore);
-    features{i} = HelperComputePitchAndMFCC(data,info);
+    features{i} = HelperComputePitchAndMFCC(data(:,1),info);
 end
 features = vertcat(features{:});
 features = rmmissing(features);

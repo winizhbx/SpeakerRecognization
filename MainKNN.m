@@ -1,9 +1,11 @@
 clc,clear all,close all
-dataDir = MyHelperAN4Download;
+%dataDir = MyHelperAN4Download; %an4
+%dataDir = fullfile('TIMIT','TRAIN','DR'); %TIMIT
+dataDir = fullfile('record','train','en'); %recorded
 ads = audioexample.Datastore(dataDir, 'IncludeSubfolders', true,...
-    'FileExtensions', '.flac', 'ReadMethod','File',...
+    'FileExtensions', '.wav', 'ReadMethod','File',...
     'LabelSource','foldernames');
-[trainDatastore, testDatastore]  = splitEachLabel(ads,0.80);
+[trainDatastore, testDatastore] = splitEachLabel(ads,0.80)
 
 %% Feature Extraction
 features = ExtractFeatures(trainDatastore);

@@ -13,7 +13,7 @@ function dataDir = MyHelperAN4Download
 %   Copyright 2017 The MathWorks, Inc.
 
 url = 'http://www.speech.cs.cmu.edu/databases/an4/an4_raw.littleendian.tar.gz';
-d = tempdir;
+d = '.';
 fs = 16e3;
 
 % Download and extract if it hasn't already been done.
