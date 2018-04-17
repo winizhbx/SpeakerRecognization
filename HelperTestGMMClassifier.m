@@ -10,7 +10,7 @@ for idx = 1:length(Filenames)
     for model_idx = 1:speakers_num
         accu = 0;
         for i = 1:size(T,1)
-            accu = accu + log(gaussianND(table2array(T(i,1:14)),M{model_idx},Cov{model_idx},class_num));
+            accu = accu + log(gaussianND(table2array(T(i,1:end-1)),M{model_idx},Cov{model_idx},class_num));
         end
         if accu > max
             max = accu;
@@ -23,7 +23,7 @@ for idx = 1:length(Filenames)
     if strcmp(actualSpeaker, predictedSpeaker)
         correct = correct + 1;
     end
-    total = total + 1;
+    total = total + 1
 end
 result = correct/total;
 

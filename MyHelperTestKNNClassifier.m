@@ -22,7 +22,7 @@ total = 0;
 correct = 0;
 for idx = 1:length(Filenames)
     T = featuresTest(Fidx==idx,2:end);  % Rows that correspond to one file
-    predictedLabels = string(predict(trainedClassifier,T(:,1:15))); % Predict
+    predictedLabels = string(predict(trainedClassifier,T(:,1:end-1))); % Predict
     totalVals = size(predictedLabels,1);
 
     [predictedLabel, freq] = mode(predictedLabels); % Find most frequently predicted label
