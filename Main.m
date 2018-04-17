@@ -12,7 +12,7 @@ ads = audioexample.Datastore(dataDir, 'IncludeSubfolders', true,...
 
 %% Feature Extraction
 features = ExtractFeatures(trainDatastore);
-features(:,2) = [];
+%features(:,2) = [];
 featureVectors = features{:,2:15};
 
 m = mean(featureVectors);
@@ -20,7 +20,7 @@ s = std(featureVectors);
 features{:,2:15} = (featureVectors-m)./s;
 
 featuresTest = ExtractFeatures(testDatastore);
-featuresTest(:,2) = [];
+%featuresTest(:,2) = [];
 featuresTest{:,2:15} = (featuresTest{:,2:15}-m)./s;
 
 %% Training a Classifier
